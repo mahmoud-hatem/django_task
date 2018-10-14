@@ -1,1 +1,1 @@
-# djanko_task
+# django_task
