@@ -1,11 +1,12 @@
-from django.shortcuts import render
-from .models import Account
+from django.http import HttpResponse
 
+from django.shortcuts import render, redirect
+from .models import Account
+from .forms import AccountCreationForm
 # Create your views here.
 
 def index(request):
     context = {
-        'header': "Django App",
         'title': "Welcome to Accounts App"
     }
 
@@ -19,3 +20,18 @@ def list_accounts(request):
     }
 
     return render(request, "accounts/list.html", context)
+
+def create_account(request):
+
+    if request.method == 'POST':
+        form = AccountCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("accounts:list")
+    else:
+        form = AccountCreationForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, "accounts/add.html", context)

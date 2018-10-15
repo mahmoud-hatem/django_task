@@ -10,9 +10,13 @@
 
     <ul style="padding-left: 4%;">
     {% for account in accounts %}
-        <li>
-            <label>  Name: {{ account.name }}</label>
-            <label> Email: {{ account.email }}</label>
+        <li class="row">
+            <div class="col-sm-4">
+                Name: {{ account.name }}
+            </div>
+            <div class="col-sm-4">
+                Email: {{ account.email }}
+            </div>
         </li>
     {% endfor %}
     </ul>
