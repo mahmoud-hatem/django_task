@@ -1,14 +1,15 @@
 {% extends 'accounts/layout.html' %}
 
 {% block body %}
-    <div class="create-account">
-        <h2>Create Account</h2>
+    <div class="create-account center">
         <form class="site-form" action="{% url 'accounts:create' %}" method="post">
             {% csrf_token %}
 
             {{form}}
 
-            <input type="submit" value="Create">
+
+            <input  type="submit" class="btn center" value="Create">
+
         </form>
     </div>
 {% endblock %}

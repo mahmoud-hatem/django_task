@@ -2,17 +2,21 @@
 
 {% block body %}
 
-    <div class="header">
-        <h3>{{title}}</h3>
-    </div>
+        <table class="center">
+            <tbody>
+            <tr>
+                <td>
+                    <a href="{% url 'accounts:list' %}" class=".btn-default"> Accounts List </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="{% url 'accounts:create' %}" class=".btn-default"> Create Account </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-    <br>
-
-    <div>
-        <a href="{% url 'accounts:list' %}" class=".btn-default"> Accounts List </a>
-        <br>
-        <a href="{% url 'accounts:create' %}" class=".btn-default"> Create Account </a>
-    </div>
 
 
 {% endblock %}

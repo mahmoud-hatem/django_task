@@ -16,6 +16,7 @@ def list_accounts(request):
     accounts = Account.objects.all()
 
     context = {
+        'title': "Accounts",
         'accounts': accounts
     }
 
@@ -32,6 +33,7 @@ def create_account(request):
         form = AccountCreationForm()
 
     context = {
+        'title': "Create Account",
         'form': form,
     }
     return render(request, "accounts/add.html", context)

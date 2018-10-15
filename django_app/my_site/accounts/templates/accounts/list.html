@@ -1,23 +1,24 @@
 {% extends 'accounts/layout.html' %}
 
 {% block body %}
-
-    <div class="header">
-        <h3>{{title}}</h3>
-    </div>
-
-    <br>
-
-    <ul style="padding-left: 4%;">
-    {% for account in accounts %}
-        <li class="row">
-            <div class="col-sm-4">
-                Name: {{ account.name }}
-            </div>
-            <div class="col-sm-4">
-                Email: {{ account.email }}
-            </div>
-        </li>
-    {% endfor %}
-    </ul>
+    <table class="center">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                   Email
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for account in accounts %}
+            <tr>
+                <td>{{ account.name }}</td>
+                <td>{{ account.email }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

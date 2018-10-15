@@ -4,12 +4,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<link rel="stylesheet" href="{% static '/css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"/>
     <title>Accounts Django App</title>
-
 </head>
 <body>
+    <nav class="nav-bar" >
+        <header>
+            <div class="site-name">
+                Accounts Django App
+            </div>
+        </header>
+        <ul class="nav-list">
+            <li class="nav-link">
+                <a href="{% url 'accounts:index' %}" type="button">Home</a>
+            </li>
+        </ul>
+    </nav>
 
+    <div class="header">
+        <h3>{{title}}</h3>
+    </div>
     {% block body %}
     {% endblock %}
 </body>
